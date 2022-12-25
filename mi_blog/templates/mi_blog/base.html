@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog Home - Start Bootstrap Template</title>
+        <title>Blog Home - Mi Blog Personal</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -21,7 +21,7 @@
                     {% if user.is_authenticated %}
                     Hola, {{user.first_name}} |
                     {% endif %}
-                    Start Bootstrap</a>
+                    Mi Blog Personal</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -31,8 +31,8 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'mi_blog_logout' %}">Logout</a></li>
                         {% else %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'mi_blog_login' %}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'mi_blog_singup' %}">Registrarse</a></li>
                         {% endif %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'mi_blog_singup' %}">Registrarse</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'mi_blog_mensajes_crear' %}">Contacto</a></li>
                     </ul>
@@ -43,8 +43,8 @@
         <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder">Welcome to Blog Home!</h1>
-                    <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+                    <h1 class="fw-bolder">Bienvenido al Blog!</h1>
+                    <p class="lead mb-0">Blog creado para la entrega final del curso de Python CoderHouse</p>
                 </div>
             </div>
         </header>

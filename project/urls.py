@@ -25,10 +25,10 @@ from mi_blog.views import (index, PostDetalle, PostListar, PostCrear, PostBorrar
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mi_blog/', index, name='mi_blog_index'),
-    path('mi_blog/crear', staff_member_required(PostCrear.as_view()), name='mi_blog_crear'),
+    path('mi_blog/crear', PostCrear.as_view(), name='mi_blog_crear'),
     path('mi_blog/<int:pk>/detalle', PostDetalle.as_view(), name='mi_blog_detalle'),
-    path('mi_blog/listar', PostListar.as_view(), name='mi_blog_detalle'),
-    path('mi_blog/<int:pk>/actualizar', staff_member_required(PostActualizar.as_view()), name='mi_blog_detalle'),
+    path('mi_blog/listar', PostListar.as_view(), name='mi_blog_listar'),
+    path('mi_blog/<int:pk>/actualizar', staff_member_required(PostActualizar.as_view()), name='mi_blog_actualizar'),
     path('mi_blog/<int:pk>/borrar', staff_member_required(PostBorrar.as_view()), name='mi_blog_borrar'),
     path('mi_blog/singup', UserSingUp.as_view(), name='mi_blog_singup'),
     path('mi_blog/login', UserLogin.as_view(), name='mi_blog_login'),
@@ -38,7 +38,7 @@ urlpatterns = [
     path('mi_blog/mensajes/crear', MensajeCrear.as_view(), name='mi_blog_mensajes_crear'),
     path('mi_blog/mensajes/listar', MensajeListar.as_view(), name='mi_blog_mensajes_listar'),
     path('mi_blog/mensajes/<int:pk>/detalle', MensajeDetail.as_view(), name='mi_blog_mensajes_detalle'),
-    path('mi_blog/mensajes/<int:pk>/borrar', MensajeBorrar.as_view(), name='mi_blog_mensajes_borrar'),
+    path('mi_blog/mensajes/<int:pk>/borrar', staff_member_required(MensajeBorrar.as_view()), name='mi_blog_mensajes_borrar'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

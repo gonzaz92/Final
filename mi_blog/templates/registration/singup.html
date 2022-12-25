@@ -1,0 +1,10 @@
+{% extends 'mi_blog/base.html' %}
+
+{% block contenido %}
+<h2>Registar Usuario</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Registarme">
+</form>
+{% endblock %}

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     titulo = models.CharField(max_length=75)
     sub_titulo = models.CharField(max_length=75)
-    texto = models.TextField
+    texto = models.TextField(max_length=3000)
     imagen = models.ImageField(upload_to='posteos', null='True', blank=True)
     fecha_publicacion = models.DateField()
 

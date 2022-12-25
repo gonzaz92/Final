@@ -8,7 +8,7 @@ from mi_blog.models import Post, Avatar, Mensaje
 from mi_blog.forms import UsuarioForm
 
 def index(request):
-    posts = Post.objects.order_by('fecha_publicacion').all()
+    posts = Post.objects.order_by('-fecha_publicacion').all()
     return render(request, 'mi_blog/index.html', {'posts': posts})
 
 class PostDetalle(DetailView):

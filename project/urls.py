@@ -18,13 +18,14 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.admin.views.decorators import staff_member_required
-from mi_blog.views import (index, PostDetalle, PostListar, PostCrear, PostBorrar, PostActualizar,
-                        UserSingUp, UserLogin, UserLogout, AvatarActualizar, UserActualizar,
-                        MensajeCrear, MensajeListar, MensajeBorrar, MensajeDetail)
+from mi_blog.views import (index, about, PostDetalle, PostListar, PostCrear, PostBorrar, 
+                        PostActualizar, UserSingUp, UserLogin, UserLogout, AvatarActualizar,
+                        UserActualizar, MensajeCrear, MensajeListar, MensajeBorrar, MensajeDetail)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mi_blog/', index, name='mi_blog_index'),
+    path('mi_blog/about', about, name='mi_blog_about'),
     path('mi_blog/crear', PostCrear.as_view(), name='mi_blog_crear'),
     path('mi_blog/<int:pk>/detalle', PostDetalle.as_view(), name='mi_blog_detalle'),
     path('mi_blog/listar', PostListar.as_view(), name='mi_blog_listar'),

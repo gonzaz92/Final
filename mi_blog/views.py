@@ -11,6 +11,9 @@ def index(request):
     posts = Post.objects.order_by('-fecha_publicacion').all()
     return render(request, 'mi_blog/index.html', {'posts': posts})
 
+def about(request):
+    return render(request, 'mi_blog/about.html')
+
 class PostDetalle(DetailView):
     model = Post
 

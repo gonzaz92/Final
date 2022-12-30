@@ -1,12 +1,23 @@
 {% extends 'mi_blog/base.html' %}
 
 {% block contenido %}
-<h1>{{object.titulo}}</h1>
-<h2>{{object.sub_titulo}}</h2>
-<div>
-    <img src="{{object.imagen.url}}" height="300">
+<div class='container'>
+    <div>
+        <h1 class="fw-bolder">{{object.titulo}}</h1>
+    </div>
+        <p class="lead mb-0">
+            <h4 >{{object.sub_titulo}}</h4>
+        </p>
+    <div style="text-align: center">
+        <p>
+            <img src="{{object.imagen.url}}" height="500">
+        </p>
+    </div>
+    <div style="text-align: justify">
+        <p>
+            {{object.texto}}
+        </p>
+    </div>
 </div>
-<div>
-    {{object.texto}}
-</div>
+
 {% endblock %}

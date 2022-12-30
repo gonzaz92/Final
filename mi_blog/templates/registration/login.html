@@ -1,9 +1,10 @@
 {% extends 'mi_blog/base.html' %}
 
 {% block contenido %}
-    <form method="POST">
+    <form style="text-align: center" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Ingresar">
+        <input class="btn btn-primary" type="submit" value="Ingresar">
     </form>
+    <p></p>
 {% endblock %}

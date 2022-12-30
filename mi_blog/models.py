@@ -7,6 +7,7 @@ class Post(models.Model):
     texto = models.TextField(max_length=3000)
     imagen = models.ImageField(upload_to='posteos', null='True', blank=True)
     fecha_publicacion = models.DateField()
+    autor = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Avatar(models.Model):
     user = models.OneToOneField(to=User, on_delete=models.CASCADE, related_name='avatar')

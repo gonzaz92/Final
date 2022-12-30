@@ -1,10 +1,13 @@
 {% extends 'mi_blog/base.html' %}
 
 {% block contenido %}
-<form method="post">
+<form style="text-align: center;" method="post">
     {% csrf_token %}
-    '¿Seguro que desea borrar el post'?
-    <a href="{% url 'mi_blog_listar' %}" type="button" >No</a>
-    <input type="submit" value="Si">
+    <p>¿Seguro que desea borrar el post'? </p>
+    <p>
+    <a class="btn btn-primary" href="{% url 'mi_blog_listar' %}" type="button" >No</a>
+    <input class="btn btn-primary" type="submit" value="Si">
+    </p>
 </form>
+<p></p>
 {% endblock %}

@@ -2,15 +2,15 @@
 
 {% block contenido %}
 {% if user.is_authenticated %}
-<li>
-    <h3><a href="{% url 'mi_blog_crear' %}">Nuevo Post</a></h3>
-<h5><a href="{% url 'mi_blog_avatar_actualizar' user.id %}">Cambiar Avatar</a></h5>
-    <h5><a href="{% url 'mi_blog_user_actualizar' user.id %}">Actualizar Datos</a></h5>
-    <h5><a href="{% url 'mi_blog_mensajes_listar' %}">Mensajes</a></h5>
-</li>
+        <ul>
+            <a class="btn btn-primary" href="{% url 'mi_blog_crear' %}">Nuevo Post</a></h5>
+            <a class="btn btn-primary" href="{% url 'mi_blog_avatar_actualizar' user.id %}">Cambiar Avatar</a>
+            <a class="btn btn-primary" href="{% url 'mi_blog_user_actualizar' user.id %}">Actualizar Datos</a>
+            <a class="btn btn-primary" href="{% url 'mi_blog_mensajes_listar' %}">Mensajes</a>
+        </ul>
 {% endif %}
 <ul>
-    <h2>Posteos del Blog</h2>
+    <h2 style="font-weight: bold">Posteos Realizados</h2>
 {% for post in object_list %}
     <li>{{post.fecha_publicacion}} - - {{post.titulo}}
         {% if user.is_superuser %}

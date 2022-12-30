@@ -1,11 +1,14 @@
 {% extends 'mi_blog/base.html' %}
 
 {% block contenido %}
-
-<form enctype="multipart/form-data" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Enviar">
-</form>
-
+<div style="text-align: center;" >
+    <h2 style="font-weight: bold;">Ingrese los datos de su mensaje</h2>
+    <p></p>
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-primary" type="submit" value="Enviar">
+    </form>
+    <p></p>
+</div>
 {% endblock %}

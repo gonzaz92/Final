@@ -2,6 +2,7 @@
 
 {% block contenido %}
 <ul>
+    <h2 style="font-weight: bold">Mensajes Recibidos</h2>
 {% for mensaje in object_list %}
     <li>{{mensaje.enviado_el}} - - {{mensaje.email}} - - {{mensaje.nombre}}
             <a href="{% url 'mi_blog_mensajes_detalle' mensaje.id %}">Ver</a>

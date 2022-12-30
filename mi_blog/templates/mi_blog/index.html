@@ -9,7 +9,7 @@
                 <!-- Featured blog post-->
                 <div class="card mb-4">
                     {% if posts.0 %}
-                    <a href="#!"><img class="card-img-top" src="{{posts.0.imagen.url}}" alt="..." /></a>
+                    <a href="{% url 'mi_blog_detalle' posts.0.id %}"><img class="card-img-top" src="{{posts.0.imagen.url}}" alt="..." /></a>
                     <div class="card-body">
                         <div class="small text-muted">{{posts.0.fecha_publicacion}}</div>
                         <h2 class="card-title">{{posts.0.titulo}}</h2>
@@ -24,7 +24,7 @@
                         <!-- Blog post-->
                         <div class="card mb-4">
                             {% if posts.1 %}
-                            <a href="#!"><img class="card-img-top" src="{{posts.1.imagen.url}}" alt="..." /></a>
+                            <a href="{% url 'mi_blog_detalle' posts.1.id %}"><img class="card-img-top" src="{{posts.1.imagen.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.1.fecha_publicacion}}</div>
                                 <h2 class="card-title">{{posts.1.titulo}}</h2>
@@ -36,7 +36,7 @@
                         <!-- Blog post-->
                         <div class="card mb-4">
                             {% if posts.2 %}
-                            <a href="#!"><img class="card-img-top" src="{{posts.2.imagen.url}}" alt="..." /></a>
+                            <a href="{% url 'mi_blog_detalle' posts.2.id %}"><img class="card-img-top" src="{{posts.2.imagen.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.2.fecha_publicacion}}</div>
                                 <h2 class="card-title">{{posts.2.titulo}}</h2>
@@ -50,7 +50,7 @@
                         <!-- Blog post-->
                         <div class="card mb-4">
                             {% if posts.3 %}
-                            <a href="#!"><img class="card-img-top" src="{{posts.3.imagen.url}}" alt="..." /></a>
+                            <a href="{% url 'mi_blog_detalle' posts.3.id %}"><img class="card-img-top" src="{{posts.3.imagen.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.3.fecha_publicacion}}</div>
                                 <h2 class="card-title">{{posts.3.titulo}}</h2>
@@ -62,7 +62,7 @@
                         <!-- Blog post-->
                         <div class="card mb-4">
                             {% if posts.4 %}
-                            <a href="#!"><img class="card-img-top" src="{{posts.4.imagen.url}}" alt="..." /></a>
+                            <a href="{% url 'mi_blog_detalle' posts.4.id %}"><img class="card-img-top" src="{{posts.4.imagen.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.4.fecha_publicacion}}</div>
                                 <h2 class="card-title">{{posts.4.titulo}}</h2>
@@ -93,21 +93,21 @@
             </div>
             <!-- Categories widget-->
             <div class="card mb-4">
-                <div class="card-header">Categorias</div>
+                <div class="card-header">Redes</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0">
-                                <li><a href="#!">Web Design</a></li>
-                                <li><a href="#!">HTML</a></li>
-                                <li><a href="#!">Freebies</a></li>
+                                <li><a href="https://www.youtube.com/@gonza.z92">YouTube</a></li>
+                                <li><a href="https://www.facebook.com/Zorrogp/">Facebook</a></li>
+                                <li><a href="https://www.instagram.com/gonza.z92/">Instagram</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0">
-                                <li><a href="#!">JavaScript</a></li>
-                                <li><a href="#!">CSS</a></li>
-                                <li><a href="#!">Tutorials</a></li>
+                                <li><a href="https://www.twitch.tv/gonzaz92">Twitch</a></li>
+                                <li><a href="https://github.com/gonzaz92/">GitHub</a></li>
+                                <li><a href="https://twitter.com/gonza_z92">Twitter</a></li>
                             </ul>
                         </div>
                     </div>

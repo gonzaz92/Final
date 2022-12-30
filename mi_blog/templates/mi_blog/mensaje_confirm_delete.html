@@ -4,7 +4,7 @@
 <form method="post">
     {% csrf_token %}
     '¿Seguro que desea borrar el mensaje'?
-    <a href="mi_blog_listar" type="button" >No</a>
+    <a href="{% url 'mi_blog_mensajes_listar' %}" type="button" >No</a>
     <input type="submit" value="Si">
 </form>
 {% endblock %}

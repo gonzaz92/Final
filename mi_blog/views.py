@@ -1,14 +1,20 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from mi_blog.models import Post, Avatar, Mensaje
 from mi_blog.forms import UsuarioForm
+from django.db.models import Q
 
 def index(request):
+    queryset = request.GET.get('buscar')
     posts = Post.objects.order_by('-id').all()
+    if queryset:
+        posts = Post.objects.filter(Q(titulo__icontains = queryset) |
+                                    Q(sub_titulo__icontains = queryset) |
+                                    Q(texto__icontains = queryset)).distinct()
     return render(request, 'mi_blog/index.html', {'posts': posts})
 
 def about(request):
@@ -17,7 +23,7 @@ def about(request):
 class PostDetalle(DetailView):
     model = Post
 
-class PostListar(ListView):
+class PostListar(LoginRequiredMixin,ListView):
     model = Post
 
 class PostCrear(LoginRequiredMixin,CreateView):

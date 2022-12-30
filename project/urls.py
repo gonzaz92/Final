@@ -24,7 +24,7 @@ from mi_blog.views import (index, about, PostDetalle, PostListar, PostCrear, Pos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mi_blog/', index, name='mi_blog_index'),
+    path('', index, name='mi_blog_index'),
     path('mi_blog/about', about, name='mi_blog_about'),
     path('mi_blog/crear', PostCrear.as_view(), name='mi_blog_crear'),
     path('mi_blog/<int:pk>/detalle', PostDetalle.as_view(), name='mi_blog_detalle'),

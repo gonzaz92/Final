@@ -30,3 +30,5 @@ LoginRequiredMixin<br>
 Para la barra de busqueda se utilizo el model Q ofrecido por django.<br>
 
 Muestra del proyecto:<br>
+
+<iframe width="1264" height="711" src="https://www.youtube.com/embed/TFl_a7_ZrD8" title="Final de CoderHouse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

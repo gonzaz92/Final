@@ -4,7 +4,8 @@
 <div style="text-align: center;">
     <form enctype="multipart/form-data" method="POST">
         {% csrf_token %}
-        {{form.as_p}}
+        {{ form.media }}
+        {{ form.as_p }}
         <input class="btn btn-primary" type="submit" value="Postear">
     </form>
     <p></p>

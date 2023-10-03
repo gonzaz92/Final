@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -128,3 +129,11 @@ LOGIN_URL = 'mi_blog_login'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
+
+CKEDITOR_UPLOAD_PATH = 'subidas/'
+CKEDITOR_CONFIGS = { 'default' : {
+                    'toolbar' : 'full',
+                    'height' : 300,
+                    'width' : 800,
+                    },
+                }

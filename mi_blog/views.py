@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from mi_blog.models import Post, Avatar, Mensaje
-from mi_blog.forms import UsuarioForm
+from mi_blog.forms import UsuarioForm, PostForm
 from django.db.models import Q
 
 def index(request):
@@ -28,8 +28,8 @@ class PostListar(LoginRequiredMixin,ListView):
 
 class PostCrear(LoginRequiredMixin,CreateView):
     model = Post
+    form_class = PostForm
     success_url = reverse_lazy('mi_blog_listar')
-    fields = '__all__'
 
 class PostBorrar(LoginRequiredMixin,DeleteView):
     model = Post
